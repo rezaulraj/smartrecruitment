@@ -92,11 +92,11 @@ const Header = () => {
   return (
     <header className="bg-white">
       <nav className="max-w-screen-xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-10">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-xl font-bold text-indigo-600">
-              Smart <span>Recruit</span>
+            <a href="/" className="text-xl font-bold font-poppins">
+              Smart <span className="text-primary">Recruit</span>
             </a>
           </div>
 
@@ -107,7 +107,7 @@ const Header = () => {
                 {item.path ? (
                   <Link
                     to={item.path}
-                    className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/14 rounded-md transition-colors"
                   >
                     {item.icon}
                     {item.name}
@@ -115,7 +115,7 @@ const Header = () => {
                 ) : (
                   <button
                     onClick={() => toggleSubnav(index)}
-                    className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors"
+                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/14 rounded-md transition-colors cursor-pointer"
                   >
                     {item.icon}
                     {item.name}
@@ -133,7 +133,7 @@ const Header = () => {
                       <Link
                         key={subIndex}
                         to={subItem.path}
-                        className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
+                        className="flex items-center px-4 py-2 text-[15px] hover:text-primary hover:bg-secondary/14"
                       >
                         {subItem.icon}
                         {subItem.name}
@@ -143,6 +143,13 @@ const Header = () => {
                 )}
               </div>
             ))}
+            <div className="flex items-center justify-center">
+              <button className="bg-primary px-2 py-1 text-white text-sm font-poppins rounded-md ml-6 cursor-pointer">
+                Contact
+              </button>
+              {/* multilanguage */}
+              <div></div>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -180,7 +187,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden pb-4">
-            <div className="space-y-1">
+            <div className="space-y-1 ">
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.path ? (
