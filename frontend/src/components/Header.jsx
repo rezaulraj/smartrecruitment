@@ -8,6 +8,7 @@ import {
   FiChevronDown,
   FiChevronUp,
   FiExternalLink,
+  FiPhone,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -95,9 +96,9 @@ const Header = () => {
         <div className="flex justify-between items-center h-10">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-xl font-bold font-poppins">
+            <Link to="/" className="text-xl font-bold font-poppins">
               Smart <span className="text-primary">Recruit</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -107,7 +108,7 @@ const Header = () => {
                 {item.path ? (
                   <Link
                     to={item.path}
-                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/14 rounded-md transition-colors"
+                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/10 rounded-md transition-colors"
                   >
                     {item.icon}
                     {item.name}
@@ -115,7 +116,7 @@ const Header = () => {
                 ) : (
                   <button
                     onClick={() => toggleSubnav(index)}
-                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/14 rounded-md transition-colors cursor-pointer"
+                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/10 rounded-md transition-colors cursor-pointer"
                   >
                     {item.icon}
                     {item.name}
@@ -128,12 +129,12 @@ const Header = () => {
                 )}
 
                 {item.subNav && activeSubnav === index && (
-                  <div className="absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-1 z-10">
+                  <div className="absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-100">
                     {item.subNav.map((subItem, subIndex) => (
                       <Link
                         key={subIndex}
                         to={subItem.path}
-                        className="flex items-center px-4 py-2 text-[15px] hover:text-primary hover:bg-secondary/14"
+                        className="flex items-center px-4 py-2 text-[15px] hover:text-primary hover:bg-secondary/10"
                       >
                         {subItem.icon}
                         {subItem.name}
@@ -143,20 +144,18 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <div className="flex items-center justify-center">
-              <button className="bg-primary px-2 py-1 text-white text-sm font-poppins rounded-md ml-6 cursor-pointer">
+            <div className="flex items-center justify-center ml-4">
+              <button className="bg-primary px-4 py-2 text-white text-sm font-poppins rounded-md hover:bg-primary/90 transition-colors">
                 Contact
               </button>
-              {/* multilanguage */}
-              <div></div>
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-500 hover:text-indigo-600 focus:outline-none"
+              className="text-gray-700 hover:text-primary focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -187,13 +186,14 @@ const Header = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden pb-4">
-            <div className="space-y-1 ">
+            <div className="space-y-1">
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.path ? (
                     <Link
                       to={item.path}
-                      className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md"
+                      className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-secondary/10 rounded-md"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.icon}
                       {item.name}
@@ -202,7 +202,7 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => toggleSubnav(index)}
-                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-md"
+                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-secondary/10 rounded-md"
                       >
                         <div className="flex items-center">
                           {item.icon}
@@ -220,7 +220,8 @@ const Header = () => {
                             <Link
                               key={subIndex}
                               to={subItem.path}
-                              className="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-md"
+                              className="flex items-center px-3 py-2 text-sm text-gray-700 hover:text-primary hover:bg-secondary/10 rounded-md"
+                              onClick={() => setMobileMenuOpen(false)}
                             >
                               {subItem.icon}
                               {subItem.name}
@@ -232,6 +233,14 @@ const Header = () => {
                   )}
                 </div>
               ))}
+              <Link
+                to="/contact"
+                className="flex items-center px-3 py-2 text-base font-medium bg-primary text-white rounded-md mt-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <FiPhone className="mr-2" />
+                Contact
+              </Link>
             </div>
           </div>
         )}
