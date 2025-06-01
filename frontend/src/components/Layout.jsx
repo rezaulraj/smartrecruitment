@@ -4,9 +4,9 @@ import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
-    <div className="min-h-screen">
+    <div className="bg-bg min-h-screen">
       <Header />
-      <main className="">
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />

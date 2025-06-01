@@ -18,8 +18,8 @@ const Header = () => {
 
   const navItems = [
     {
-      name: "Home",
-      path: "/",
+      name: "About",
+      path: "/about-us",
       icon: <FiHome className="mr-2" />,
     },
     {
@@ -91,9 +91,9 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white">
-      <nav className="max-w-screen-xl mx-auto px-4">
-        <div className="flex justify-between items-center h-10">
+    <header className="bg-bg">
+      <nav className="max-w-screen-xl mx-auto px-4 relative z-[9999]">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-xl font-bold font-poppins">
@@ -129,7 +129,7 @@ const Header = () => {
                 )}
 
                 {item.subNav && activeSubnav === index && (
-                  <div className="absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-100">
+                  <div className="absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-1 z-[9999] border border-gray-100">
                     {item.subNav.map((subItem, subIndex) => (
                       <Link
                         key={subIndex}
