@@ -93,10 +93,10 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-center pb-2">
+            <h3 className="text-lg font-semibold mb-4 md:text-center pb-2">
               Connect With Us
             </h3>
-            <div className="flex items-center justify-center">
+            <div className="flex md:flex-row flex-col gap-2 md:items-center md:justify-center">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}

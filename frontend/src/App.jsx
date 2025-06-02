@@ -6,6 +6,9 @@ import AboutPage from "./pages/about/AboutPage";
 import EmployeePage from "./pages/employes/EmployeePage";
 import NotFound from "./components/NotFound";
 import PartnerPage from "./pages/partners/PartnerPage";
+import JobPage from "./pages/jobs/JobPage";
+import JobDetails from "./pages/jobs/JobDetails";
+import SkillAndTraining from "./pages/skill/SkillAndTraining";
 function App() {
   return (
     <>
@@ -15,6 +18,12 @@ function App() {
           <Route path="/about-us" element={<AboutPage />} />
           <Route path="/employer" element={<EmployeePage />} />
           <Route path="/partner" element={<PartnerPage />} />
+          <Route path="/jobs" element={<JobPage />} />
+          <Route path="/jobs/:id" element={<JobDetails />} />
+          <Route
+            path="/skills-and-language-training"
+            element={<SkillAndTraining />}
+          />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
