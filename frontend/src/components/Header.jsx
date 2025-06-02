@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [activeSubnav, setActiveSubnav] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredNav, setHoveredNav] = useState(null);
 
   const navItems = [
     {
@@ -91,24 +92,37 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-bg">
-      <nav className="max-w-screen-xl mx-auto px-4 relative z-[9999]">
+    <header className="bg-white shadow-sm sticky top-0 z-[99999]">
+      <nav className="max-w-screen-xl mx-auto px-4 relative">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-xl font-bold font-poppins">
-              Smart <span className="text-primary">Recruit</span>
+            <Link
+              to="/"
+              className="text-xl font-bold font-poppins flex items-center"
+            >
+              <span className="text-gray-900">Smart</span>
+              <span className="text-primary ml-1">Recruit</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-1">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => (
-              <div key={index} className="relative group">
+              <div
+                key={index}
+                className="relative"
+                onMouseEnter={() => setHoveredNav(index)}
+                onMouseLeave={() => setHoveredNav(null)}
+              >
                 {item.path ? (
                   <Link
                     to={item.path}
-                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/10 rounded-md transition-colors"
+                    className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                      hoveredNav === index
+                        ? "text-primary bg-blue-50"
+                        : "text-gray-700 hover:text-primary hover:bg-blue-50"
+                    }`}
                   >
                     {item.icon}
                     {item.name}
@@ -116,36 +130,50 @@ const Header = () => {
                 ) : (
                   <button
                     onClick={() => toggleSubnav(index)}
-                    className="flex items-center px-3 py-2 text-[15px] font-medium hover:text-primary hover:bg-secondary/10 rounded-md transition-colors cursor-pointer"
+                    className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                      hoveredNav === index || activeSubnav === index
+                        ? "text-primary bg-blue-50"
+                        : "text-gray-700 hover:text-primary hover:bg-blue-50"
+                    }`}
                   >
                     {item.icon}
                     {item.name}
                     {activeSubnav === index ? (
-                      <FiChevronUp className="ml-1" />
+                      <FiChevronUp className="ml-1.5 text-sm" />
                     ) : (
-                      <FiChevronDown className="ml-1" />
+                      <FiChevronDown className="ml-1.5 text-sm" />
                     )}
                   </button>
                 )}
 
-                {item.subNav && activeSubnav === index && (
-                  <div className="absolute left-0 mt-1 w-64 bg-white rounded-md shadow-lg py-1 z-[9999] border border-gray-100">
-                    {item.subNav.map((subItem, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        to={subItem.path}
-                        className="flex items-center px-4 py-2 text-[15px] hover:text-primary hover:bg-secondary/10"
-                      >
-                        {subItem.icon}
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                {/* Hover-based subnav */}
+                {item.subNav &&
+                  (hoveredNav === index || activeSubnav === index) && (
+                    <div
+                      className={`absolute left-0 mt-0 w-64 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-100 transition-all duration-200 ${
+                        hoveredNav === index || activeSubnav === index
+                          ? "opacity-100 translate-y-0"
+                          : "opacity-0 translate-y-1 pointer-events-none"
+                      }`}
+                    >
+                      {item.subNav.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          to={subItem.path}
+                          className="flex items-center px-4 py-2.5 text-sm text-gray-700 hover:text-primary hover:bg-blue-50 transition-colors"
+                        >
+                          {subItem.icon}
+                          <span>{subItem.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
               </div>
             ))}
-            <div className="flex items-center justify-center ml-4">
-              <button className="bg-primary px-4 py-2 text-white text-sm font-poppins rounded-md hover:bg-primary/90 transition-colors">
+
+            <div className="ml-4">
+              <button className="bg-primary px-5 py-2.5 text-white text-sm font-medium rounded-md hover:bg-primary/90 transition-colors shadow-sm flex items-center">
+                <FiPhone className="mr-2" />
                 Contact
               </button>
             </div>
@@ -155,7 +183,7 @@ const Header = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-primary focus:outline-none"
+              className="text-gray-700 hover:text-primary focus:outline-none p-2 rounded-md hover:bg-blue-50"
             >
               <svg
                 className="h-6 w-6"
@@ -185,14 +213,14 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="space-y-1">
+          <div className="md:hidden pb-4 bg-white shadow-md rounded-lg mt-1">
+            <div className="space-y-1 px-2">
               {navItems.map((item, index) => (
                 <div key={index}>
                   {item.path ? (
                     <Link
                       to={item.path}
-                      className="flex items-center px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-secondary/10 rounded-md"
+                      className="flex items-center px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50 rounded-md transition-colors"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.icon}
@@ -202,16 +230,16 @@ const Header = () => {
                     <>
                       <button
                         onClick={() => toggleSubnav(index)}
-                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-secondary/10 rounded-md"
+                        className="flex items-center justify-between w-full px-3 py-3 text-base font-medium text-gray-700 hover:text-primary hover:bg-blue-50 rounded-md transition-colors"
                       >
                         <div className="flex items-center">
                           {item.icon}
                           {item.name}
                         </div>
                         {activeSubnav === index ? (
-                          <FiChevronUp />
+                          <FiChevronUp className="text-gray-500" />
                         ) : (
-                          <FiChevronDown />
+                          <FiChevronDown className="text-gray-500" />
                         )}
                       </button>
                       {activeSubnav === index && (
@@ -220,7 +248,7 @@ const Header = () => {
                             <Link
                               key={subIndex}
                               to={subItem.path}
-                              className="flex items-center px-3 py-2 text-sm text-gray-700 hover:text-primary hover:bg-secondary/10 rounded-md"
+                              className="flex items-center px-3 py-2.5 text-sm text-gray-600 hover:text-primary hover:bg-blue-50 rounded-md transition-colors"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               {subItem.icon}
@@ -235,7 +263,7 @@ const Header = () => {
               ))}
               <Link
                 to="/contact"
-                className="flex items-center px-3 py-2 text-base font-medium bg-primary text-white rounded-md mt-2"
+                className="flex items-center px-3 py-3 text-base font-medium bg-primary text-white rounded-md mt-2 hover:bg-primary/90 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <FiPhone className="mr-2" />
