@@ -1,5 +1,5 @@
 import React from "react";
-import jobfair from "../../assets/image/home/jobfair.png";
+import jobfair from "../../assets/image/home/jobfair.png?url";
 const HomeJobFair = () => {
   return (
     <section className="py-10 max-w-screen-xl mx-auto p-4">

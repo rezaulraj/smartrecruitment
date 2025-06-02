@@ -1,7 +1,7 @@
 import React from "react";
-import skill1 from "../../assets/image/skillworker/skill1.png";
-import skill2 from "../../assets/image/skillworker/skill2.png";
-import skill3 from "../../assets/image/skillworker/skill3.png";
+import skill1 from "../../assets/image/skillworker/skill1.png?url";
+import skill2 from "../../assets/image/skillworker/skill2.png?url";
+import skill3 from "../../assets/image/skillworker/skill3.png?url";
 
 const HomeSkill = () => {
   const skills = [

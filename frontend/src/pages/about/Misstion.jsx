@@ -1,5 +1,5 @@
 import React from "react";
-import mission from "../../assets/image/aboutus/mission.png";
+import mission from "../../assets/image/aboutus/mission.png?url";
 
 const Mission = () => {
   return (

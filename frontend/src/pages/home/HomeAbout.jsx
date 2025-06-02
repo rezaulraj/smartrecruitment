@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "../../assets/image/home/image1.png";
+import aboutImage from "../../assets/image/home/image1.png?url";
 const HomeAbout = () => {
   return (
     <section className="py-10 max-w-screen-xl mx-auto p-4">

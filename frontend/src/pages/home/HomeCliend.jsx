@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { FiPlay } from "react-icons/fi";
 import ReactModal from "react-modal";
-import cliend1 from "../../assets/image/cliend/c1.png";
-import cliend2 from "../../assets/image/cliend/c2.png";
-import cliend3 from "../../assets/image/cliend/c3.png";
+import cliend1 from "../../assets/image/cliend/c1.png?url";
+import cliend2 from "../../assets/image/cliend/c2.png?url";
+import cliend3 from "../../assets/image/cliend/c3.png?url";
 
-import companyLogo from "../../assets/image/companylogo.png";
+import companyLogo from "../../assets/image/companylogo.png?url";
 
 // Set app element for accessibility
 ReactModal.setAppElement("#root");

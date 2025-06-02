@@ -1,5 +1,5 @@
 import React from "react";
-import storyimg from "../../assets/image/aboutus/ourstory.png";
+import storyimg from "../../assets/image/aboutus/ourstory.png?url";
 
 const AboutStory = () => {
   return (

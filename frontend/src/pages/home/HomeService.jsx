@@ -1,7 +1,7 @@
 import React from "react";
-import service1 from "../../assets/image/home/service1.png";
-import service2 from "../../assets/image/home/service2.png";
-import service3 from "../../assets/image/home/service3.png";
+import service1 from "../../assets/image/home/service1.png?url";
+import service2 from "../../assets/image/home/service2.png?url";
+import service3 from "../../assets/image/home/service3.png?url";
 
 const HomeService = () => {
   return (

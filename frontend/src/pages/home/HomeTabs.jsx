@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
-import work1 from "../../assets/image/work/work1.png";
-import work2 from "../../assets/image/work/work2.png";
-import work3 from "../../assets/image/work/work3.png";
-import work4 from "../../assets/image/work/work4.png";
-import work5 from "../../assets/image/work/work5.png";
-import work6 from "../../assets/image/work/work6.png";
-import work7 from "../../assets/image/work/work7.png";
+import work1 from "../../assets/image/work/work1.png?url";
+import work2 from "../../assets/image/work/work2.png?url";
+import work3 from "../../assets/image/work/work3.png?url";
+import work4 from "../../assets/image/work/work4.png?url";
+import work5 from "../../assets/image/work/work5.png?url";
+import work6 from "../../assets/image/work/work6.png?url";
+import work7 from "../../assets/image/work/work7.png?url";
 
-import employee1 from "../../assets/image/employee/step1.png";
-import employee2 from "../../assets/image/employee/step2.png";
-import employee3 from "../../assets/image/employee/step3.png";
-import employee4 from "../../assets/image/employee/step4.png";
-import employee5 from "../../assets/image/employee/step5.png";
-import employee6 from "../../assets/image/employee/step6.png";
+import employee1 from "../../assets/image/employee/step1.png?url";
+import employee2 from "../../assets/image/employee/step2.png?url";
+import employee3 from "../../assets/image/employee/step3.png?url";
+import employee4 from "../../assets/image/employee/step4.png?url";
+import employee5 from "../../assets/image/employee/step5.png?url";
+import employee6 from "../../assets/image/employee/step6.png?url";
 
-import partner1 from "../../assets/image/partner/part1.png";
-import partner2 from "../../assets/image/partner/part2.png";
-import partner3 from "../../assets/image/partner/part3.png";
-import partner4 from "../../assets/image/partner/part4.png";
-import partner5 from "../../assets/image/partner/part5.png";
-import partner6 from "../../assets/image/partner/part6.png";
-import partner7 from "../../assets/image/partner/part7.png";
+import partner1 from "../../assets/image/partner/part1.png?url";
+import partner2 from "../../assets/image/partner/part2.png?url";
+import partner3 from "../../assets/image/partner/part3.png?url";
+import partner4 from "../../assets/image/partner/part4.png?url";
+import partner5 from "../../assets/image/partner/part5.png?url";
+import partner6 from "../../assets/image/partner/part6.png?url";
+import partner7 from "../../assets/image/partner/part7.png?url";
+
 const HomeTabs = () => {
   const [activeTab, setActiveTab] = useState("worker");
 
@@ -318,7 +319,7 @@ const HomeTabs = () => {
                     )}
                   </div>
 
-                  {index < worker.length - 1 && (
+                  {index < partner.length - 1 && (
                     <div className="flex items-center justify-center w-8">
                       <FiArrowRight className="text-primary text-xl md:text-2xl border border-primary p-1 rounded-full " />
                     </div>

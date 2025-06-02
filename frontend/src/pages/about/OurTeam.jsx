@@ -3,23 +3,23 @@ import ceoimg from "../../assets/image/aboutus/team1.png";
 import cooimg from "../../assets/image/aboutus/team2.png";
 import { FaLinkedin, FaQuoteLeft } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
-import re1 from "../../assets/image/aboutus/recuit/re1.png";
-import re2 from "../../assets/image/aboutus/recuit/re2.png";
-import re3 from "../../assets/image/aboutus/recuit/re3.png";
-import re4 from "../../assets/image/aboutus/recuit/re4.png";
-import re5 from "../../assets/image/aboutus/recuit/re5.png";
-import re6 from "../../assets/image/aboutus/recuit/re6.png";
+import re1 from "../../assets/image/aboutus/recuit/re1.png?url";
+import re2 from "../../assets/image/aboutus/recuit/re2.png?url";
+import re3 from "../../assets/image/aboutus/recuit/re3.png?url";
+import re4 from "../../assets/image/aboutus/recuit/re4.png?url";
+import re5 from "../../assets/image/aboutus/recuit/re5.png?url";
+import re6 from "../../assets/image/aboutus/recuit/re6.png?url";
 
-import sale1 from "../../assets/image/aboutus/recuit/sale1.png";
-import sale2 from "../../assets/image/aboutus/recuit/sale2.png";
-import sale3 from "../../assets/image/aboutus/recuit/sale3.png";
-import sale4 from "../../assets/image/aboutus/recuit/sale4.png";
-import sale5 from "../../assets/image/aboutus/recuit/sale5.png";
-import sale6 from "../../assets/image/aboutus/recuit/sale6.png";
+import sale1 from "../../assets/image/aboutus/recuit/sale1.png?url";
+import sale2 from "../../assets/image/aboutus/recuit/sale2.png?url";
+import sale3 from "../../assets/image/aboutus/recuit/sale3.png?url";
+import sale4 from "../../assets/image/aboutus/recuit/sale4.png?url";
+import sale5 from "../../assets/image/aboutus/recuit/sale5.png?url";
+import sale6 from "../../assets/image/aboutus/recuit/sale6.png?url";
 
-import info0 from "../../assets/image/aboutus/recuit/info0.png";
-import info1 from "../../assets/image/aboutus/recuit/info1.png";
-import info2 from "../../assets/image/aboutus/recuit/info2.png";
+import info0 from "../../assets/image/aboutus/recuit/info0.png?url";
+import info1 from "../../assets/image/aboutus/recuit/info1.png?url";
+import info2 from "../../assets/image/aboutus/recuit/info2.png?url";
 
 const OurTeam = () => {
   const teamMembers = [

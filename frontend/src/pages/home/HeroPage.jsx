@@ -1,5 +1,5 @@
 import React from "react";
-import parson from "../../assets/image/parson1.png";
+import parson from "../../assets/image/parson1.png?url";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 const HeroPage = () => {
   return (
