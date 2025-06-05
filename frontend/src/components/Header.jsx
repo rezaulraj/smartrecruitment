@@ -172,10 +172,10 @@ const Header = () => {
             ))}
 
             <div className="ml-4">
-              <button className="bg-primary px-5 py-2.5 text-white text-sm font-medium rounded-md hover:bg-primary/90 transition-colors shadow-sm flex items-center">
+              <Link to={"/contacts"} className="bg-primary px-5 py-2.5 text-white text-sm font-medium rounded-md hover:bg-primary/90 transition-colors shadow-sm flex items-center">
                 <FiPhone className="mr-2" />
                 Contact
-              </button>
+              </Link>
             </div>
           </div>
 

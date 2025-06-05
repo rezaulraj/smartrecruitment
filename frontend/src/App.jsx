@@ -11,6 +11,8 @@ import JobDetails from "./pages/jobs/JobDetails";
 import SkillAndTrainingPage from "./pages/skill/SkillAndTrainingPage";
 import SkillTrainingDetails from "./pages/skilltrainDetails/SkillTrainingDetails";
 import LanguageTrainingDetails from "./pages/languagetraindetails/LanguageTrainingDetails";
+import HallOfFreamPage from "./pages/halloffream/HallOfFreamPage";
+import ContactPage from "./pages/contact/ContactPage";
 function App() {
   return (
     <>
@@ -34,6 +36,8 @@ function App() {
             path="/skills-and-language-training/language/:idl"
             element={<LanguageTrainingDetails />}
           />
+          <Route path="/hall-of-fame" element={<HallOfFreamPage />} />
+          <Route path="/contacts" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
