@@ -2,10 +2,11 @@ import React from "react";
 import lang1 from "../../assets/image/skilltrain/lang1.png?url";
 import lang2 from "../../assets/image/skilltrain/lang2.png?url";
 import lang3 from "../../assets/image/skilltrain/lang3.png?url";
+import { Link } from "react-router-dom";
 const LanguageTraining = () => {
   const languageTraining = [
     {
-      id: 1,
+      idl: 1,
       image: lang1,
       langName: "English Language",
       langSubTitle:
@@ -15,7 +16,7 @@ const LanguageTraining = () => {
       price: "100",
     },
     {
-      id: 2,
+      idl: 2,
       image: lang2,
       langName: "German Language",
       langSubTitle: "Key for construction and manufacturing jobs in Germany",
@@ -24,7 +25,7 @@ const LanguageTraining = () => {
       price: "120",
     },
     {
-      id: 3,
+      idl: 3,
       image: lang3,
       langName: "Spanish Language",
       langSubTitle: "Useful for hospitality and cleaning jobs in Spain",
@@ -52,7 +53,7 @@ const LanguageTraining = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
         {languageTraining.map((language) => (
           <div
-            key={language.id}
+            key={language.idl}
             className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-100"
           >
             <div className="h-48 overflow-hidden">
@@ -107,9 +108,12 @@ const LanguageTraining = () => {
                 <span className="text-xl font-bold text-primary">
                   ${language.price}
                 </span>
-                <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                <Link
+                  to={`/skills-and-language-training/language/${language.idl}`}
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+                >
                   Enroll Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>

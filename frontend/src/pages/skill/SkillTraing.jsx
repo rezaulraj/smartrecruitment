@@ -5,7 +5,7 @@ import skill3 from "../../assets/image/skilltrain/skill3.png?url";
 import skill4 from "../../assets/image/skilltrain/skill4.png?url";
 import skill5 from "../../assets/image/skilltrain/skill5.png?url";
 import skill6 from "../../assets/image/skilltrain/skill6.png?url";
-
+import { Link } from "react-router-dom";
 
 const SkillTraing = () => {
   const skillData = [
@@ -71,7 +71,6 @@ const SkillTraing = () => {
     },
   ];
 
-  
   return (
     <section className="max-w-screen-xl mx-auto px-6 py-16">
       {/* Skills Section */}
@@ -150,9 +149,12 @@ const SkillTraing = () => {
                     Price on request
                   </span>
                 )}
-                <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                <Link
+                  to={`/skills-and-language-training/skill/${skill.id}`}
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+                >
                   Enroll Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -164,8 +166,6 @@ const SkillTraing = () => {
           Load More Skills
         </button>
       </div>
-
-      
     </section>
   );
 };

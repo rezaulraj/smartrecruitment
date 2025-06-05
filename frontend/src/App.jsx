@@ -9,6 +9,8 @@ import PartnerPage from "./pages/partners/PartnerPage";
 import JobPage from "./pages/jobs/JobPage";
 import JobDetails from "./pages/jobs/JobDetails";
 import SkillAndTrainingPage from "./pages/skill/SkillAndTrainingPage";
+import SkillTrainingDetails from "./pages/skilltrainDetails/SkillTrainingDetails";
+import LanguageTrainingDetails from "./pages/languagetraindetails/LanguageTrainingDetails";
 function App() {
   return (
     <>
@@ -23,6 +25,14 @@ function App() {
           <Route
             path="/skills-and-language-training"
             element={<SkillAndTrainingPage />}
+          />
+          <Route
+            path="/skills-and-language-training/skill/:id"
+            element={<SkillTrainingDetails />}
+          />
+          <Route
+            path="/skills-and-language-training/language/:idl"
+            element={<LanguageTrainingDetails />}
           />
           <Route path="*" element={<NotFound />} />
         </Route>
