@@ -66,9 +66,9 @@ const HallOfFream = () => {
     <section className="my-20 max-w-screen-xl mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Hall Of Fame</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Celebrating workers who achieved their dreams with Smart
-          Recruit—updated every month!
+        <p className="text-lg text-gray-600 max-w-lg mx-auto">
+          Celebrating workers who achieved their dreams with Smart Recruit
+          —updated every month!
         </p>
       </div>
 
@@ -119,7 +119,7 @@ const HallOfFream = () => {
               </div>
 
               <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
-                <p className="text-primary/90 italic">
+                <p className="text-gray-600 italic">
                   "Achieved my dream job abroad with Smart Recruit's help!"
                 </p>
               </div>

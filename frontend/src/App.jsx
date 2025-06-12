@@ -13,6 +13,8 @@ import SkillTrainingDetails from "./pages/skilltrainDetails/SkillTrainingDetails
 import LanguageTrainingDetails from "./pages/languagetraindetails/LanguageTrainingDetails";
 import HallOfFreamPage from "./pages/halloffream/HallOfFreamPage";
 import ContactPage from "./pages/contact/ContactPage";
+import VisaRelocationPage from "./pages/visareloacation/VisaRelocationPage";
+import CarrerPage from "./pages/carrer/CarrerPage";
 function App() {
   return (
     <>
@@ -37,6 +39,11 @@ function App() {
             element={<LanguageTrainingDetails />}
           />
           <Route path="/hall-of-fame" element={<HallOfFreamPage />} />
+          <Route
+            path="/visa-and-relocation-guidance"
+            element={<VisaRelocationPage />}
+          />
+          <Route path="/career" element={<CarrerPage />} />
           <Route path="/contacts" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
